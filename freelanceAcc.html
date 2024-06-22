@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp as Freelancer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/e1ee600127.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #logo {
+        color: rgb(20, 168, 0);
+      }
+      #join {
+        margin-top: 6px;
+      }
+      .needs-validation {
+        border: none;
+        box-shadow: none;
+      }
+
+      .btn {
+        width: 100%;
+        border-radius: 12px;
+      }
+      .google-icon img,
+      .apple-icon i {
+        position: absolute;
+      }
+
+      img {
+        top: 25px;
+        left: 15px;
+        padding: 8px;
+        min-width: 35px;
+      }
+
+      #googleBtn {
+        padding: 8px;
+      }
+
+      .google-icon img {
+        background-color: white;
+        margin: 18px;
+        height: 36px;
+        border-radius: 10px;
+      }
+      #apple {
+        padding-top: 13px;
+        padding-left: 25px;
+      }
+
+      #country-select option[selected] {
+        background-color: #eee;
+      }
+
+      input[type="checkbox"]:checked {
+        background-color: rgb(20, 168, 0);
+      }
+
+      #createBtn {
+        margin-left: 140px;
+        background-color: #108a00;
+      }
+      #createBtn:hover {
+        background-color: rgb(20, 168, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i
+            class="fa-brands fa-upwork d-inline-block align-text-top fs-5 pt-1"
+            style="color: rgb(20, 168, 0)"
+          ></i>
+          <span style="font-weight: 500" class="fs-5" id="logo">work</span>
+        </a>
+        <form class="d-flex" action="" method="post">
+          <span id="join">Here to hire talent? </span>
+          <a href="clientAcc.html">
+            <button class="btn border-0" type="button" style="color: #108a00">
+              Join as a Client
+            </button>
+          </a>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row justify-content-center mx-auto mt-5">
+        <h1 class="text-center">Sign up to find work you love</h1>
+        <div class="mx-auto card w-50 border-0" id="formDiv">
+          <form
+            action="Home.html"
+            class="form needs-validation p-3 d-flex flex-column"
+            id="form"
+            novalidate
+          >
+            <div class="row mb-4 mt-4">
+              <div class="google-icon col-sm-12 col-md-6 col-lg-6">
+                <a href="https://accounts.google.com/">
+                  <img src="icons/google.png" />
+                  <button
+                    type="button"
+                    class="btn text-white bg-primary text-center"
+                    id="googleBtn"
+                  >
+                    Continue with Google
+                  </button>
+                </a>
+              </div>
+              <div class="apple-icon col-sm-12 col-md-6 col-lg-6">
+                <a href="http://www.apple.com/">
+                  <i class="bi bi-apple fa-xs text-dark" id="apple"></i>
+                  <button
+                    type="button"
+                    class="btn text-black bg-white border-black text-center"
+                  >
+                    Continue with Apple
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+              <p>______________________ or ______________________</p>
+            </div>
+
+            <div
+              id="alertDiv"
+              style="display: none"
+              class="alert alert-dismissible fade show col-sm-12 col-md-12 col-lg-12 text-danger"
+              role="alert"
+            >
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+              <strong id="alertMessage"></strong>
+            </div>
+
+            <div class="row fw-medium mb-4 mt-2">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" />
+                <div class="invalid-feedback" id="invalidFName"></div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" />
+                <div class="invalid-feedback" id="invalidLName"></div>
+              </div>
+
+              <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  name="email"
+                />
+                <div class="invalid-feedback" id="invalidEmail"></div>
+              </div>
+
+              <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                <label for="pwd">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="pwd"
+                  placeholder="Enter password"
+                  name="pswd"
+                />
+                <div class="invalid-feedback" id="invalidPwd"></div>
+              </div>
+
+              <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                <label>Country</label>
+                <select class="form-select">
+                  <option value="">Select Country</option>
+                  <option value="AE" data-search-keyword="United Arab Emirates">
+                    United Arab Emirates
+                  </option>
+                  <option value="EG" selected>Egypt</option>
+                  <option value="FR" data-search-keyword="France">spane</option>
+                  <option value="FR" data-search-keyword="Germany">
+                    Germany
+                  </option>
+                  <option value="FR" data-search-keyword="Afghanistan">
+                    Afghanistan
+                  </option>
+                  <option value="FR" data-search-keyword="Algeria">
+                    Algeria
+                  </option>
+                  <option value="FR" data-search-keyword="Angola">
+                    Angola
+                  </option>
+                  <option value="FR" data-search-keyword="Australia">
+                    Australia
+                  </option>
+                  <option value="FR" data-search-keyword="Brazil">
+                    Brazil
+                  </option>
+                  <option value="FR" data-search-keyword="Canada">
+                    Canada
+                  </option>
+                  <option value="FR" data-search-keyword="Chile">Chile</option>
+                  <option value="FR" data-search-keyword="Congo">Congo</option>
+                  <option value="FR" data-search-keyword="Cuba">Cuba</option>
+                  <!-- Add more countries here -->
+                </select>
+              </div>
+
+              <div class="form-check col-sm-12 col-md-12 col-lg-12 mt-3 ms-3">
+                <label class="form-check-label mt-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="remember"
+                    id="checkBox1"
+                  />
+                  Send me helpful emails to find rewarding work and job leads.
+                </label>
+
+                <label class="form-check-label mt-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="remember"
+                    id="checkBox2"
+                  />
+                  Yes, I understand and agree to the
+                  <a
+                    href="https://www.upwork.com/legal#terms"
+                    style="color: #108a00"
+                    >Upwork Terms of Service</a
+                  ><br />
+                  including the<a
+                    href="https://www.upwork.com/legal#useragreement"
+                    style="color: #108a00"
+                    >User Agreement</a
+                  >
+                  and
+                  <a
+                    href="https://www.upwork.com/legal#privacy"
+                    style="color: #108a00"
+                    >Privacy Policy</a
+                  >
+                  <div class="invalid-feedback" id="invalidcheckbox2"></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 mt-2">
+              <a href="#" class="text-decoration-none">
+                <button
+                  type="submit"
+                  class="btn text-white w-50"
+                  id="createBtn"
+                >
+                  Create my account
+                </button>
+              </a>
+              <p class="text-black text-center mt-4">
+                Already have an account?
+                <a href="index.html" style="color: #108a00">LogIn</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let isValid = true;
+      document.getElementById("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const firstName = document.getElementById("firstName");
+        const lastName = document.getElementById("lastName");
+        const email = document.getElementById("email");
+        const pwd = document.getElementById("pwd");
+        const checkBox2 = document.getElementById("checkBox2");
+
+        // Validate the form fields
+        validateFields();
+
+        if (!isValid) {
+          return; 
+        }
+
+        // Store the values in local storage
+        localStorage.setItem("firstName",firstName.value);
+        localStorage.setItem("email", email.value);
+        localStorage.setItem("password", pwd.value);
+        
+        document.getElementById("form").submit();
+      });
+
+      // Call the validation functions when the fields are blurred
+      firstName.addEventListener("blur", () => {
+        validateFirstName(firstName);
+      });
+      lastName.addEventListener("blur", () => {
+        validateLastName(lastName);
+      });
+      pwd.addEventListener("blur", () => {
+        validatePwd(pwd);
+      });
+      email.addEventListener("blur", () => {
+        validateEmail(email);
+      });
+      checkBox2.addEventListener("change", () => {
+        validateCheckbox(checkBox2);
+      });
+
+      // Define the validation functions
+      function validateFields() {
+        isValid = true;
+        if (!validateFirstName(firstName)) {
+          isValid = false;
+        }
+        if (!validateLastName(lastName)) {
+          isValid = false;
+        }
+        if (!validatePwd(pwd)) {
+          isValid = false;
+        }
+        if (!validateEmail(email)) {
+          isValid = false;
+        }
+        if (!validateCheckbox(checkBox2)) {
+          isValid = false;
+        }
+      }
+
+      function validateFirstName(fname) {
+        const firstNameRegex = /^[a-zA-Z.'-]+$/;
+        if (!firstNameRegex.test(fname.value)) {
+          fname.classList.add("is-invalid");
+          document.getElementById("invalidFName").textContent =
+            "*First name is invalid";
+          return false;
+        } else {
+          fname.classList.remove("is-invalid");
+          fname.classList.add("is-valid");
+          document.getElementById("invalidFName").textContent = "";
+          return true;
+        }
+      }
+
+      function validateLastName(lname) {
+        const lastNameRegex = /^[a-zA-Z.'-]+$/;
+        if (!lastNameRegex.test(lname.value)) {
+          lname.classList.add("is-invalid");
+          document.getElementById("invalidLName").textContent =
+            "*Last name is invalid";
+          return false;
+        } else {
+          lname.classList.remove("is-invalid");
+          lname.classList.add("is-valid");
+          document.getElementById("invalidLName").textContent = "";
+          return true;
+        }
+      }
+
+      function validatePwd(pwd) {
+        const passwordRegex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+        if (!passwordRegex.test(pwd.value)) {
+          pwd.classList.add("is-invalid");
+          document.getElementById("invalidPwd").textContent =
+            "*Use at least 8 characters,at least one uppercase, one lowercase and number";
+          return false;
+        } else {
+          pwd.classList.remove("is-invalid");
+          pwd.classList.add("is-valid");
+          document.getElementById("invalidPwd").textContent = "";
+          return true;
+        }
+      }
+
+      function validateEmail(mail) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(mail.value)) {
+          mail.classList.add("is-invalid");
+          document.getElementById("invalidEmail").textContent =
+            "*Please Enter a valid email address";
+          return false;
+        } else {
+          mail.classList.remove("is-invalid");
+          mail.classList.add("is-valid");
+          document.getElementById("invalidEmail").textContent = "";
+          return true;
+        }
+      }
+
+      function validateCheckbox(checkBox) {
+        if (!checkBox.checked) {
+          checkBox.classList.add("is-invalid");
+          document.getElementById("invalidcheckbox2").textContent =
+            "Please accept the Upwork Terms of Service before continuing";
+          return false;
+        } else {
+          checkBox.classList.remove("is-invalid");
+          checkBox.classList.add("is-valid");
+          document.getElementById("invalidcheckbox2").textContent = "";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
